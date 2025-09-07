@@ -160,7 +160,7 @@ const Hero = () => {
             <img
               src="/profile.webp"
               alt="Profile"
-              className="absolute inset-0 w-full h-full object-cover"
+              className="absolute inset-0 w-full h-full object-cover shadow-2xl hover:scale-120"
             />
           </div>
         </div>
