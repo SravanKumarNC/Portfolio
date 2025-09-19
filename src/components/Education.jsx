@@ -4,7 +4,7 @@ import { education } from "../data/education";
 const Education = () => (
   <section
     id="education"
-    className="py-20 container mx-auto border-t border-[#25213b] min-h-[70vh]"
+    className="py-20 container mx-auto border-t border-[#25213b] min-h-[70vh] flex flex-col items-center"
   >
     <div className="flex justify-center my-10 lg:py-12">
       <div className="flex items-center">
@@ -15,7 +15,7 @@ const Education = () => (
         <span className="w-24 h-[2px] bg-[#1a1443]"></span>
       </div>
     </div>
-    <div className="space-y-6">
+    <div className="space-y-6 lg:w-[85%]">
       {education.map((edu, idx) => (
         <div key={idx} className="p-6 m-2 bg-[#FFFFFF] border shadow-md rounded-xl">
           <h3 className="text-xl font-semibold">{edu.degree}</h3>

@@ -2,7 +2,7 @@ import React from "react";
 import { projects } from "../data/projects";
 
 const Projects = () => (
-  <section id="projects" className="py-20 container mx-auto min-h-[80vh] border-t border-[#25213b] justify-center items-center ">
+  <section id="projects" className="py-20 container mx-auto min-h-[80vh] border-t border-[#25213b] flex flex-col justify-center items-center ">
     <div className="flex justify-center my-10 lg:py-12">
       <div className="flex items-center">
         <span className="w-24 h-[2px] bg-[#1a1443]"></span>
@@ -12,7 +12,7 @@ const Projects = () => (
         <span className="w-24 h-[2px] bg-[#1a1443]"></span>
       </div>
     </div>
-    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mx-2">
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-2 mx-2 lg:max-w-[85%]">
       {projects.map((p, idx) => (
         <div key={idx} className="p-6 bg-[#FFFFFF] border rounded-xl shadow-md">
           <h3 className="text-xl font-semibold">{p.title}</h3>

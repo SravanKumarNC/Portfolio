@@ -2,7 +2,7 @@ import React from "react";
 import { experience } from "../data/experience";
 
 const Experience = () => (
-  <section id="experience" className="py-20 container mx-auto">
+  <section id="experience" className="py-20 container mx-auto flex flex-col items-center">
     <div className="flex justify-center my-10 lg:py-12">
       <div className="flex items-center">
         <span className="w-24 h-[2px] bg-[#1a1443]"></span>
@@ -12,7 +12,7 @@ const Experience = () => (
         <span className="w-24 h-[2px] bg-[#1a1443]"></span>
       </div>
     </div>
-    <div className="space-y-8 ">
+    <div className="space-y-8 lg:max-w-[85%]">
       {experience.map((exp, idx) => (
         <div key={idx} className="p-6 m-2 bg-[#FFFFFF] border shadow-md rounded-xl">
           <h3 className="text-xl font-semibold">{exp.role}</h3>

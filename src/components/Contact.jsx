@@ -42,7 +42,7 @@ const Contact = () => {
   return (
     <section
       id="contact"
-      className="py-10 container mx-auto border-t border-[#25213b] min-h-[80vh]"
+      className="py-10 container mx-auto border-t border-[#25213b] min-h-[80vh] flex flex-col items-center"
     >
       <div className="flex justify-center my-10 lg:py-12">
         <div className="flex items-center">
@@ -53,7 +53,7 @@ const Contact = () => {
           <span className="w-24 h-[2px] bg-[#1a1443]"></span>
         </div>
       </div>
-      <div className="grid md:grid-cols-2 gap-2">
+      <div className="grid md:grid-cols-2 gap-2 lg:max-w-[85%]">
         {/* Info Section */}
         <div className="bg-[#FFFFFF] flex mx-2 flex-col justify-center gap-y-4 shadow-lg rounded-xl p-8">
           <h3 className="text-xl font-semibold mb-4">Get In Touch</h3>
