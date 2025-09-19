@@ -1,7 +1,7 @@
 export const personal = {
   name: "Sravan Kumar N C",
   tagline: "Software Engineer | Open Source Enthusiast",
-  about: "I am a passionate developer specializing in building scalable applications and clean UI.",
+  about: "I’m a passionate Full Stack Developer who thrives on building scalable applications and designing seamless, user-friendly interfaces. Driven by curiosity, I enjoy solving complex challenges and continuously exploring new technologies to refine my skills and deliver impactful solutions.",
   email: "sravankumarnc12@gmail.com",
   location: "Banglore, India",
   socials: {

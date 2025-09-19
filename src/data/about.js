@@ -1,6 +1,4 @@
 export const about = {
   title: "About Me",
-  content: `I am a passionate Full Stack Developer with expertise in building scalable 
-  applications and crafting user-friendly interfaces. I love solving complex 
-  problems and continuously learning new technologies to improve my skillset.`
+  content: `I’m a passionate Software Engineer who thrives on building scalable applications and designing seamless, user-friendly interfaces. Driven by curiosity, I enjoy solving complex challenges and continuously exploring new technologies to refine my skills and deliver impactful solutions.`
 };

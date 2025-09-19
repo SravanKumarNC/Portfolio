@@ -1,139 +1,6 @@
-// import React from "react";
-// import { personal } from "../data/Personal.js";
-// import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-// import { SiLeetcode } from "react-icons/si";
-// // Import profile image if inside src/assets
-// import profileImg from "../assets/util/profile.jpg";
-
-// const Hero = () => {
-//   const icons = {
-//     github: <FaGithub size={28} />,
-//     linkedin: <FaLinkedin size={28} />,
-//     twitter: <FaTwitter size={28} />,
-//     leetcode: <SiLeetcode size={28} />,
-//   };
-
-//   return (
-//     <section
-//       id="hero"
-//       className="h-screen w-full flex flex-col md:flex-row items-center justify-center gap-12 px-6 md:px-16"
-//     >
-//       {/* Left: Personal Info */}
-//       <div className="flex-1 text-center md:text-left">
-//         <h1 className="text-5xl font-bold">{personal.name}</h1>
-//         <p className="text-xl mt-2 text-gray-600">{personal.tagline}</p>
-//         <p className="mt-4 text-gray-700 max-w-xl mx-auto md:mx-0">
-//           {personal.about}
-//         </p>
-
-//         {/* Social Icons */}
-//         <div className="flex justify-center md:justify-start space-x-6 mt-6">
-//           {Object.entries(personal.socials).map(([key, link]) => (
-//             <a
-//               key={key}
-//               href={link}
-//               target="_blank"
-//               rel="noreferrer"
-//               className="text-gray-600 hover:text-blue-500 transition-colors duration-200"
-//             >
-//               {icons[key]}
-//             </a>
-//           ))}
-//         </div>
-//       </div>
-
-//       {/* Right: Cloud Image */}
-//       <div className="flex-1 flex justify-center">
-//         <div className="w-60 h-80 bg-gradient-to-br from-purple-300 to-pink-200 rounded-[50%] overflow-hidden animate-float shadow-xl">
-//           <img
-//             src={profileImg}
-//             alt="Profile"
-//             className="w-full h-full object-cover"
-//           />
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Hero;
-
-// import React from "react";
-// import { personal } from "../data/Personal.js";
-// import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
-// import { SiLeetcode } from "react-icons/si";
-// // import profileImg from "../assets/util/profile.jpg";
-
-// const Hero = () => {
-//   const icons = {
-//     github: <FaGithub size={28} />,
-//     linkedin: <FaLinkedin size={28} />,
-//     twitter: <FaTwitter size={28} />,
-//     leetcode: <SiLeetcode size={28} />,
-//   };
-
-//   return (
-//     <section
-//       id="hero"
-//       className="h-screen w-full flex flex-col md:flex-row items-center justify-center gap-12 px-6 md:px-16"
-//     >
-//       {/* Left: Personal Info */}
-//       <div className="flex-1 text-center md:text-left">
-//         <h1 className="text-5xl font-bold">{personal.name}</h1>
-//         <p className="text-xl mt-2 text-gray-600">{personal.tagline}</p>
-//         <p className="mt-4 text-gray-700 max-w-xl mx-auto md:mx-0">
-//           {personal.about}
-//         </p>
-
-//         {/* Social Icons */}
-//         <div className="flex justify-center md:justify-start space-x-6 mt-6">
-//           {Object.entries(personal.socials).map(([key, link]) => (
-//             <a
-//               key={key}
-//               href={link}
-//               target="_blank"
-//               rel="noreferrer"
-//               className="text-gray-600 hover:text-blue-500 transition-colors duration-200"
-//             >
-//               {icons[key]}
-//             </a>
-//           ))}
-//         </div>
-//       </div>
-
-//       {/* Right: Styled Image */}
-//       {/* <div className="flex-1 flex justify-center">
-//         <div className="img-box inner-shadow floating">
-//           <img
-//             src={profileImg}
-//             alt="Profile"
-//             className="outer-shadow"
-//           />
-//         </div>
-//       </div> */}
-//       <div className="flex items-center justify-center min-h-screen bg-gray-800">
-//         <div className="relative p-4 rounded-xl custom-blob-shape bg-gray-900">
-//           <div className="relative w-64 h-64 overflow-hidden rounded-full">
-//             {/* Use a simple div as a placeholder for the image */}
-//             <div
-//               className="w-full h-full bg-cover bg-center"
-//               style={{ backgroundImage: "url('../assets/util/profile.jpg')" }}
-//             ></div>
-//             {/* This is where the play button or other content would go */}
-//           </div>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-// export default Hero;
-
-// src/components/Hero.js
-
-import React from "react";
 import { personal } from "../data/Personal.js";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { FaDownload } from "react-icons/fa6";
 import { SiLeetcode } from "react-icons/si";
 import { about } from "../data/about";
 import BlurText from "../Animations/BlurText.jsx";
@@ -141,10 +8,15 @@ import TextType from "../Animations/TypeText.jsx";
 
 const Hero = () => {
   const icons = {
-    github: <FaGithub size={28} />,
-    linkedin: <FaLinkedin size={28} />,
-    twitter: <FaTwitter size={28} />,
-    leetcode: <SiLeetcode size={28} />,
+    github: { icon: <FaGithub size={28} />, label: "GitHub" },
+    linkedin: { icon: <FaLinkedin size={28} />, label: "LinkedIn" },
+    twitter: { icon: <FaTwitter size={28} />, label: "Twitter" },
+    leetcode: { icon: <SiLeetcode size={28} />, label: "LeetCode" },
+    resume: {
+      icon: <FaDownload size={28}  />,
+      label: "Resume",
+      link: "/resume.pdf",
+    },
   };
 
   return (
@@ -193,15 +65,20 @@ const Hero = () => {
 
           {/* Social Icons */}
           <div className="flex justify-center md:justify-start space-x-6 mt-6">
-            {Object.entries(personal.socials).map(([key, link]) => (
+            {Object.entries(icons).map(([key, { icon, label, link }]) => (
               <a
                 key={key}
-                href={link}
-                target="_blank"
+                href={link || personal.socials[key]}
+                target={key === "resume" ? "_self" : "_blank"}
                 rel="noreferrer"
-                className="text-gray-600 cursor-target hover:text-blue-500 transition-colors duration-200"
+                download={key === "resume"}
+                className="relative group text-gray-600 cursor-target hover:text-blue-500 transition-colors duration-200"
               >
-                {icons[key]}
+                {icon}
+                {/* Tooltip */}
+                <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-black text-white text-xs rounded-md px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                  {label}
+                </span>
               </a>
             ))}
           </div>

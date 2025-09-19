@@ -3,6 +3,7 @@ import emailjs from "emailjs-com";
 import { contact } from "../data/contact";
 import { FaGithub, FaLinkedin, FaTwitter } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
+import { FaDownload } from "react-icons/fa6";
 
 const Contact = () => {
   const form = useRef();
@@ -11,10 +12,15 @@ const Contact = () => {
   // const email_public_key = import.meta.env.PUBLIC_KEY;
   // console.log(service_id);
   const icons = {
-    github: <FaGithub size={28} />,
-    linkedin: <FaLinkedin size={28} />,
-    twitter: <FaTwitter size={28} />,
-    leetcode: <SiLeetcode size={28} />,
+    github: { icon: <FaGithub size={28} />, label: "GitHub" },
+    linkedin: { icon: <FaLinkedin size={28} />, label: "LinkedIn" },
+    twitter: { icon: <FaTwitter size={28} />, label: "Twitter" },
+    leetcode: { icon: <SiLeetcode size={28} />, label: "LeetCode" },
+    resume: {
+      icon: <FaDownload size={28} />,
+      label: "Resume",
+      link: "/resume.pdf",
+    },
   };
 
   const sendEmail = (e) => {
@@ -68,15 +74,20 @@ const Contact = () => {
             <strong>Location:</strong> {contact.location}
           </p>
           <div className="flex space-x-4 mt-6">
-            {Object.entries(contact.socials).map(([platform, link]) => (
+            {Object.entries(icons).map(([key, { icon, label, link }]) => (
               <a
-                key={platform}
+                key={key}
                 href={link}
-                target="_blank"
+                target={key === "resume" ? "_self" : "_blank"}
                 rel="noreferrer"
-                className="text-gray-600 cursor-target hover:text-blue-500 transition-colors duration-200"
+                download={key === "resume"}
+                className="relative group cursor-target text-gray-600 hover:text-blue-500 transition-colors duration-200"
               >
-                {icons[platform]}
+                {icon}
+                {/* Tooltip */}
+                <span className="absolute -bottom-8 left-1/2 -translate-x-1/2 whitespace-nowrap bg-black text-white text-xs rounded-md px-2 py-1 opacity-0 group-hover:opacity-100 transition-opacity duration-200">
+                  {label}
+                </span>
               </a>
             ))}
           </div>

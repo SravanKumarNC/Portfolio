@@ -255,7 +255,7 @@ const Navbar = () => {
         {/* Logo */}
         {/* <h1 className="font-bold text-lg md:text-xl">Portfolio</h1> */}
         <div className= "">
-          <img src="/SKlogo1.webp" alt="logo" className="w-30 h-10" />
+          <img src="/SKlogo1.webp" alt="logo" className="w-10 h-10" />
         </div>
         
         <ul className="hidden md:flex space-x-6">
